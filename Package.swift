@@ -31,8 +31,7 @@ let Application = Package(
     .executable(name: "Application", targets: ["Application"]),
   ],
   dependencies: [
-    .package(name: "SwiftWin32", url: "https://github.com/damywise/swift-win32.git",
-             .revision("8d8811b16bdec998d64a4cf807a86cee38cb7567")),
+    .package(name: "SwiftWin32", url: "https://github.com/damywise/swift-win32.git", .branch("main")),
   ],
   targets: [
     .executableTarget(

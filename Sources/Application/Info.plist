@@ -14,7 +14,7 @@
       <key>SceneConfigurationName</key>
       <string>Default Configuration</string>
       <key>SceneDelegateClassName</key>
-      <string>Application.SceneDelegate</string>
+      <string>Application.AppScene</string>
       </dict>
     </array>
     </dict>
