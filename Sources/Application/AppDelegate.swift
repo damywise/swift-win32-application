@@ -117,16 +117,27 @@ private class App {
                           
     self.window.backgroundColor = Color(white: 0, alpha: 0)
 
-    var enable = true
+    let gwl_style = GetWindowLongW(handle, GWL_STYLE)
+
+    SetWindowLongW(handle,
+      GWL_STYLE,
+      gwl_style
+        | Int32(WS_OVERLAPPEDWINDOW)
+        | WS_THICKFRAME)
+
+    // var enable = true
     var dark_bool = enable_dark_mode;
     var margins = MARGINS()
     margins.cyTopHeight = -1
     // margins.cxLeftWidth = -1
     // margins.cxRightWidth = -1
     // margins.cyBottomHeight = -1
+
     DwmExtendFrameIntoClientArea(handle, &margins)
+
+    var effect_value = 2; // MICA (on Windows 11)
     DwmSetWindowAttribute(handle, 20, &dark_bool, UInt32(MemoryLayout<Bool>.size));
-    DwmSetWindowAttribute(handle, 1029, &enable, UInt32(MemoryLayout<Bool>.size));
+    DwmSetWindowAttribute(handle, 38, &effect_value, UInt32(MemoryLayout<Int>.size));
 
     // End Update Theme
 
@@ -149,6 +160,8 @@ private class App {
     self.window.addSubview(self.btnDecimal)
     self.btnDecimal.addTarget(self, action: App.onDecimalPress(_:_:),
                               for: .primaryActionTriggered)
+                              
+    self.window.subviews[0].backgroundColor = Color(white: 0, alpha: 0)
 
     self.window.makeKeyAndVisible()
   }
