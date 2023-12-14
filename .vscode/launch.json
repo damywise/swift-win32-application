@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:swift-win32-application}",
+            "name": "Debug Application",
+            "program": "${workspaceFolder:swift-win32-application}\\.build\\debug\\Application.exe",
+            "preLaunchTask": "swift: Build Debug Application"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:swift-win32-application}",
+            "name": "Release Application",
+            "program": "${workspaceFolder:swift-win32-application}\\.build\\release\\Application.exe",
+            "preLaunchTask": "swift: Build Release Application"
+        }
+    ]
+}

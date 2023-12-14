@@ -1,4 +1,4 @@
-// swift-tools-version:5.4
+// swift-tools-version:5.9
 
 import PackageDescription
 
@@ -31,8 +31,8 @@ let Application = Package(
     .executable(name: "Application", targets: ["Application"]),
   ],
   dependencies: [
-    .package(name: "SwiftWin32", url: "https://github.com/compnerd/swift-win32.git",
-             .branch("main")),
+    .package(name: "SwiftWin32", url: "https://github.com/damywise/swift-win32.git",
+             .revision("8d8811b16bdec998d64a4cf807a86cee38cb7567")),
   ],
   targets: [
     .executableTarget(
